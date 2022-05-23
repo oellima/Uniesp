@@ -3,8 +3,8 @@ package ProjetoContaBancaria.Cliente;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ProjetoContaBancaria {
-    public ProjetoContaBancaria() {
+public class Sistema {
+    public Sistema() {
     }
 
     public static void main(String[] args) {
