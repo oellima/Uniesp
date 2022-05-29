@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2ª Avaliação - Javascript</title>
+    
+    <style>
+
+        ul { list-style: none;}
+
+    </style>
+</head>
+<body>
+
+    <h1>2ª Avaliação - Javascript</h1>
+
+    <h3>Lista de compromissos<h3>
+        
+    <ul>
+        <li><input type="checkbox" name="compromisso[]" onclick="marcarTodos(this.checked);">
+            <span id="acao">Todos</span></li>        
+        <br>
+        <li><input type="checkbox" class="checkbox" name="compromisso">Compromisso 1</li>
+        <li><input type="checkbox" class="checkbox" name="compromisso">Compromisso 2</li>
+        <li><input type="checkbox" class="checkbox" name="compromisso">Compromisso 3</li>
+        <li><input type="checkbox" class="checkbox" name="compromisso">Compromisso 4</li>
+        <li><input type="checkbox" class="checkbox" name="compromisso">Compromisso 5</li>
+        <li><input type="checkbox" class="checkbox" name="compromisso">Compromisso 6</li>
+        <li><input type="checkbox" class="checkbox" name="compromisso">Compromisso 7</li>
+        
+
+    </ul>
+      
+    <input type="submit" value="Salvar" id="send">
+
+    <script>
+         function marcarTodos(marcar){
+            var itens = document.querySelectorAll("input");
+
+            var i = 0;
+        for(i=0; i<itens.length;i++){
+            itens[i].checked = marcar;
+    }
+}  
+
+var checkBoxes = document.querySelectorAll(".checkbox");
+
+var selecionados = 0;
+
+var btn = document.querySelector("#send");
+
+btn.addEventListener("click", function(e) {
+
+    e.preventDefault();
+
+    selecionados = 0;
+
+    checkBoxes.forEach(function(el) {
+
+        if(el.checked) {
+            selecionados++;
+        }        
+
+    });
+
+    console.log(selecionados)
+    alert("Você selecionou " + selecionados + " compromissos!");
+    
+});
+
+    </script>
+    
+</body>
+</html>
